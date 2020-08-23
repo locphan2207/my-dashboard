@@ -1,0 +1,25 @@
+<aside class="mdc-drawer mdc-drawer--dismissible">
+    <div class="mdc-drawer__content">
+        <menu></menu>
+    </div>
+</aside>
+<div class="mdc-drawer-app-content">
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed" id="app-bar">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" id="menu-button">
+                    menu
+                </button>
+                <span class="mdc-top-app-bar__title">{{pathToTitle((routerState | async)?.path)}}</span>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                <span class="mdc-typography--headline5">Tan Loc</span>
+            </section>
+        </div>
+    </header>
+    <main class="main-content" id="main-content">
+        <div class="mdc-top-app-bar--fixed-adjust">
+            <router-outlet [routes]="Routes.all"></router-outlet>
+        </div>
+      </main>
+</div>

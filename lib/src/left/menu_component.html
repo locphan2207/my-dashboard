@@ -1,0 +1,22 @@
+<nav class="mdc-list">
+    <a class="mdc-list-item mdc-list-item--activated" [routerLink]="RoutePaths.notes.toUrl()">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">post_add</i>
+        <span class="mdc-list-item__text">Note</span>
+    </a>
+    <a class="mdc-list-item" [routerLink]="RoutePaths.todos.toUrl()">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">list_alt</i>
+        <span class="mdc-list-item__text">To-do</span>
+    </a>
+    <a class="mdc-list-item" [routerLink]="RoutePaths.music.toUrl()">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">music_video</i>
+        <span class="mdc-list-item__text">Music</span>
+    </a>
+    <a class="mdc-list-item" [routerLink]="RoutePaths.stocks.toUrl()">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">bar_chart</i>
+        <span class="mdc-list-item__text">Stocks</span>
+    </a>
+</nav>

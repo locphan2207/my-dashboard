@@ -1,0 +1,89 @@
+<div class="notes-container">
+    <div class="note-add-button-container" (click)="toggleShowForm($event)">
+        <div class="mdc-touch-target-wrapper">
+            <button class="mdc-fab note-add-button">
+                <div class="mdc-fab__ripple"></div>
+                <span class="material-icons mdc-fab__icon">add</span>
+            </button>
+        </div>
+    </div>
+    <div class="new-note-form new-note-form--hidden note-card mdc-card mdc-elevation--z3">
+        <div class="note-card-top">
+            <label class="mdc-text-field mdc-text-field--outlined" id="title-textfield"
+                    tabindex="0"
+                    (click)="focusTextField('title-textfield')"
+                    (focus)="focusTextField('title-textfield')">
+                <input type="text" class="mdc-text-field__input" aria-labelledby="title-input" #titleInput>
+                <span class="mdc-notched-outline">
+                    <span class="mdc-notched-outline__leading"></span>
+                    <span class="mdc-notched-outline__notch">
+                        <span class="mdc-floating-label" id="title-input">Title</span>
+                    </span>
+                    <span class="mdc-notched-outline__trailing"></span>
+                </span>
+            </label>
+        </div>
+        <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea" id="body-textfield" 
+                    tabindex="0"
+                    (click)="focusTextField('body-textfield')"
+                    (focus)="focusTextField('body-textfield')">
+            <span class="mdc-text-field__resizer">
+                <textarea class="mdc-text-field__input" aria-labelledby="body-input" rows="8" 
+                    cols="40" maxlength="140" #bodyInput></textarea>
+            </span>
+            <span class="mdc-notched-outline">
+                <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__notch">
+                    <span class="mdc-floating-label" id="body-input">Body</span>
+                </span>
+                <span class="mdc-notched-outline__trailing"></span>
+            </span>
+        </label>
+        <div class="mdc-text-field-helper-line">
+            <div class="mdc-text-field-character-counter">0 / 140</div>
+        </div>
+        <div class="mdc-card__actions">
+            <div class="mdc-card__action-buttons" (click)="createNote(titleInput.value, bodyInput.value)">
+                <button class="mdc-card__action mdc-card__action--button mdc-button mdc-button--unelevated">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">Create</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <h1 class="note-section mdc-typography--headline4">All notes</h1>
+    <ul class="note-list">
+        <li *ngFor="let note of notes" class="mdc-card note-card mdc-card--outlined mdc-touch-target-wrapper">
+            <div class="note-card-top">
+                <h1 class="mdc-typography--headline6">{{note.title}}</h1>
+                <span class="mdc-typography--caption">{{getFormatedDate(note.created)}}</span>
+            </div>
+            <p class="note-body mdc-typography--body2">{{note.body}}</p>
+            <div class="note-card-icons mdc-card__action-icons">
+                <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon"
+                        (click)="toggleShowEdit()">
+                    edit
+                </button>
+                <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon"
+                        (click)="deleteNote(note.id)">
+                    delete
+                </button>
+            </div>
+        </li>
+    </ul>
+    <div class="mdc-snackbar">
+        <div class="mdc-snackbar__surface">
+            <div class="mdc-snackbar__label"
+                role="status"
+                aria-live="polite">
+                Created a new note!
+            </div>
+            <div class="mdc-snackbar__actions">
+                <button type="button" class="mdc-button mdc-snackbar__action">
+                  <div class="mdc-button__ripple"></div>
+                  <span class="mdc-button__label">Close</span>
+                </button>
+              </div>
+        </div>
+      </div>
+</div>

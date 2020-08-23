@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script>
+    // WARNING: DO NOT set the <base href> like this in production!
+    // Details: https://webdev.dartlang.org/angular/guide/router
+    (function () {
+      var m = document.location.pathname.match(/^(\/[-\w]+)+\/web($|\/)/);
+      document.write('<base href="' + (m ? m[0] : '/') + '" />');
+    }());
+  </script>
+
+  <title>My Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script defer src="main.dart.js"></script>
+</head>
+
+<body class="mdc-typography">
+  <my-app>Loading...</my-app>
+</body>
+
+</html>

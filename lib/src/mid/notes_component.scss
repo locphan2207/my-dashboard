@@ -1,0 +1,65 @@
+.notes-container {
+    padding: 32px;
+    position: relative;
+}
+
+.note-section {
+    margin: 16px 0;
+}
+
+.note-list {
+    display: grid;
+    grid-gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+.new-note-form {
+    position: absolute;
+    top: 16px;
+    right: 0; 
+    z-index: 5;
+    transition: transform 0.2s ease-in-out;
+    background-color: rgb(255, 255, 239);
+}
+.new-note-form--hidden {
+    transform: translateX(200%);
+}
+
+.note-card {
+    height: min-content;
+    width: 350px;
+    padding: 12px;
+}
+.note-card-icons {
+    opacity: 0; 
+    transition: opacity 0.2s ease-in-out;
+}
+.note-card:hover > .note-card-icons {
+    opacity: 1; 
+}
+.note-card-top {
+    padding-bottom: 12px;
+}
+
+.note-body {
+    white-space: pre-line;
+    padding-bottom: 12px;
+}
+
+.note-add-button-container {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
+}
+.note-add-button {
+    transition: transform 200ms ease-in-out, background-color 200ms ease-in-out;
+}
+.note-add-button--selected {
+    transform: rotateZ(45deg);
+    background-color: gray;
+}
+
+#title-textfield {
+    margin-bottom: 16px;
+}
